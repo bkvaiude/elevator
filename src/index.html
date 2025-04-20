@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Highguts - Elevator System</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <h1>Highguts - Elevator System</h1>
-  
+
   <div class="main-container">
     <!-- Building visualization and status side by side -->
     <div class="building-container">
       <div class="building">
         <!-- Floors -->
         <div class="floors">
-          <div class="floor" data-floor="9"><span>Floor 9</span><button class="call-btn" data-floor="9">Call</button></div>
-          <div class="floor" data-floor="8"><span>Floor 8</span><button class="call-btn" data-floor="8">Call</button></div>
-          <div class="floor" data-floor="7"><span>Floor 7</span><button class="call-btn" data-floor="7">Call</button></div>
-          <div class="floor" data-floor="6"><span>Floor 6</span><button class="call-btn" data-floor="6">Call</button></div>
-          <div class="floor" data-floor="5"><span>Floor 5</span><button class="call-btn" data-floor="5">Call</button></div>
-          <div class="floor" data-floor="4"><span>Floor 4</span><button class="call-btn" data-floor="4">Call</button></div>
-          <div class="floor" data-floor="3"><span>Floor 3</span><button class="call-btn" data-floor="3">Call</button></div>
-          <div class="floor" data-floor="2"><span>Floor 2</span><button class="call-btn" data-floor="2">Call</button></div>
-          <div class="floor" data-floor="1"><span>Floor 1</span><button class="call-btn" data-floor="1">Call</button></div>
-          <div class="floor" data-floor="0"><span>Ground Floor</span><button class="call-btn" data-floor="0">Call</button></div>
+          <div class="floor" data-floor="9"><span>Floor 9</span><button class="call-btn" data-floor="9">Call</button>
+          </div>
+          <div class="floor" data-floor="8"><span>Floor 8</span><button class="call-btn" data-floor="8">Call</button>
+          </div>
+          <div class="floor" data-floor="7"><span>Floor 7</span><button class="call-btn" data-floor="7">Call</button>
+          </div>
+          <div class="floor" data-floor="6"><span>Floor 6</span><button class="call-btn" data-floor="6">Call</button>
+          </div>
+          <div class="floor" data-floor="5"><span>Floor 5</span><button class="call-btn" data-floor="5">Call</button>
+          </div>
+          <div class="floor" data-floor="4"><span>Floor 4</span><button class="call-btn" data-floor="4">Call</button>
+          </div>
+          <div class="floor" data-floor="3"><span>Floor 3</span><button class="call-btn" data-floor="3">Call</button>
+          </div>
+          <div class="floor" data-floor="2"><span>Floor 2</span><button class="call-btn" data-floor="2">Call</button>
+          </div>
+          <div class="floor" data-floor="1"><span>Floor 1</span><button class="call-btn" data-floor="1">Call</button>
+          </div>
+          <div class="floor" data-floor="0"><span>Ground Floor</span><button class="call-btn"
+              data-floor="0">Call</button></div>
         </div>
-        
+
         <!-- Elevator shafts -->
         <div class="elevator-shafts">
           <!-- Elevator 1 -->
@@ -42,9 +54,14 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-1">1</div>
+            <div class="elevator idle" id="elevator-1">
+              <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
+              <span>
+                1
+              </span>
+            </div>
           </div>
-          
+
           <!-- Elevator 2 -->
           <div class="elevator-shaft" id="shaft-2">
             <div class="shaft-grid">
@@ -59,9 +76,14 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-2">2</div>
+            <div class="elevator idle" id="elevator-2">
+              <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
+              <span>
+                2
+              </span>
+            </div>
           </div>
-          
+
           <!-- Elevator 3 -->
           <div class="elevator-shaft" id="shaft-3">
             <div class="shaft-grid">
@@ -76,9 +98,14 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-3">3</div>
+            <div class="elevator idle" id="elevator-3">
+              <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
+              <span>
+                3
+              </span>
+            </div>
           </div>
-          
+
           <!-- Elevator 4 -->
           <div class="elevator-shaft" id="shaft-4">
             <div class="shaft-grid">
@@ -93,9 +120,14 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-4">4</div>
+            <div class="elevator idle" id="elevator-4">
+              <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
+              <span>
+                4
+              </span>
+            </div>
           </div>
-          
+
           <!-- Elevator 5 -->
           <div class="elevator-shaft" id="shaft-5">
             <div class="shaft-grid">
@@ -110,12 +142,17 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-5">5</div>
+            <div class="elevator idle" id="elevator-5">
+              <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
+              <span>
+                5
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="status-container">
       <!-- Elevator status panels -->
       <div class="elevator-stats">
@@ -129,7 +166,7 @@
             <div>Direction: <span id="direction-1"><span class="direction-indicator">⏺</span></span></div>
             <div>Calls: <span id="calls-1">0</span></div>
           </div>
-          
+
           <!-- Elevator 2 Status -->
           <div class="elevator-status status-idle" id="status-2">
             <h3>Elevator 2</h3>
@@ -138,7 +175,7 @@
             <div>Direction: <span id="direction-2"><span class="direction-indicator">⏺</span></span></div>
             <div>Calls: <span id="calls-2">0</span></div>
           </div>
-          
+
           <!-- Elevator 3 Status -->
           <div class="elevator-status status-idle" id="status-3">
             <h3>Elevator 3</h3>
@@ -147,7 +184,7 @@
             <div>Direction: <span id="direction-3"><span class="direction-indicator">⏺</span></span></div>
             <div>Calls: <span id="calls-3">0</span></div>
           </div>
-          
+
           <!-- Elevator 4 Status -->
           <div class="elevator-status status-idle" id="status-4">
             <h3>Elevator 4</h3>
@@ -156,7 +193,7 @@
             <div>Direction: <span id="direction-4"><span class="direction-indicator">⏺</span></span></div>
             <div>Calls: <span id="calls-4">0</span></div>
           </div>
-          
+
           <!-- Elevator 5 Status -->
           <div class="elevator-status status-idle" id="status-5">
             <h3>Elevator 5</h3>
@@ -167,7 +204,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- System statistics -->
       <div class="system-stats">
         <h2>System Statistics</h2>
@@ -176,10 +213,10 @@
           <p>Queue Length: 0</p>
         </div>
       </div>
-      
+
       <!-- Log container -->
       <div id="log"></div>
-      
+
       <!-- Control panel -->
       <div class="panel" id="simulate-panel">
         <button onclick="simulateRandomCalls(5)">Simulate 5 Calls</button>
@@ -191,4 +228,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
