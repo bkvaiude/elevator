@@ -115,11 +115,12 @@ body {
     width: 50px;
     height: 40px;
     left: 5px;
-    bottom: 5px; /* Start at ground floor */
-    background-color: #333;
+    bottom: 5px;
+    background-color: #999696;
     border-radius: 5px;
     transition: bottom 1s ease-in-out;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
@@ -127,6 +128,11 @@ body {
     font-size: 16px;
     z-index: 10;
   }
+  
+  .elevator svg {
+    margin-bottom: 2px;
+  }
+  
   
   .elevator.moving-up {
     background-color: #2196F3;
@@ -137,7 +143,7 @@ body {
   }
   
   .elevator.idle {
-    background-color: #333;
+    background-color: #999696;
   }
   
   .elevator.arrived {
