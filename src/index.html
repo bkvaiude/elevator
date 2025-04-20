@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enhanced Elevator System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Enhanced Elevator System</h1>
+  
+  <div class="building">
+    <div class="floors">
+      <!-- Floors will be injected by JS -->
+    </div>
+    <div class="elevator-shafts">
+      <!-- Elevator shafts will be injected by JS -->
+    </div>
+  </div>
+
+  <div class="system-stats">
+    <h2>System Statistics</h2>
+    <div id="global-stats" class="stats"></div>
+  </div>
+
+  <div class="elevator-stats">
+    <h2>Elevator Status</h2>
+    <div id="elevator-status" class="status-grid">
+      <!-- Elevator status will be injected by JS -->
+    </div>
+  </div>
+
+  <div id="log"></div>
+
+  <div class="panel" id="simulate-panel">
+    <button onclick="simulateRandomCalls(5)">Simulate 5 Calls</button>
+    <button onclick="simulateRandomCalls(10)">Simulate 10 Calls</button>
+    <button onclick="resetSystem()">Reset System</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
