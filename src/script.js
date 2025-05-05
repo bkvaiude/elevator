@@ -21,12 +21,14 @@ function initializeSystem() {
     elevators.push({
       id: i,
       busy: false,
+      isInService: false,
       currentFloor: 0,
       direction: 'idle',
       traveledDistance: 0,
       completedCalls: 0,
       totalWaitTime: 0
     });
+    simulationMatrix()
   }
 
   // Reset all UI elements to initial state
@@ -34,6 +36,9 @@ function initializeSystem() {
 
   // Add event listeners
   addEventListeners();
+
+  // Add event listeners
+  addEventListenersToElevator();
 
   // Reset stats
   stats = { totalCalls: 0, totalTravelTime: 0, completedCalls: 0 };
@@ -85,6 +90,28 @@ function addEventListeners() {
   });
 }
 
+function addEventListenersToElevator() {
+  console.log("elevator div click ....")
+  document.querySelectorAll('.elevator').forEach(button => {
+    button.addEventListener('click', () => {
+      const elevator = elevators[parseInt(button.dataset.elevator) - 1]
+
+      if(!elevator.isInService){
+        button.children[1].innerHTML = 'S'+button.dataset.elevator;
+        elevator.isInService = true
+      }
+      else{
+        button.children[1].innerHTML = button.dataset.elevator;
+        elevator.isInService = false
+      }
+      
+    });
+    
+
+
+  });
+}
+
 function handleCall(button, floor) {
   log(`Call requested at floor ${floor}`);
   if (button && button.nodeName === 'BUTTON') {
@@ -124,7 +151,7 @@ function findNearestAvailableElevator(targetFloor) {
   let minDistance = Infinity;
   
   for (let elevator of elevators) {
-    if (!elevator.busy) {
+    if (!elevator.busy && !elevator.isInService) {
       const distance = Math.abs(elevator.currentFloor - targetFloor);
       if (distance < minDistance) {
         minDistance = distance;
@@ -294,6 +321,8 @@ function simulateRandomCalls(count) {
     setTimeout(() => {
       // Find button for this floor
       const button = document.querySelector(`.call-btn[data-floor="${floor}"]`);
+      // todo: add elevator service check here to avoid assigning new task
+
       if (button && !button.classList.contains('waiting')) {
         handleCall(button, floor);
       } else {
@@ -309,9 +338,10 @@ function simulateRandomCalls(count) {
         };
         handleCall(virtualButton, floor);
       }
-    }, i * 500);
+    }, i * 3000);
   }
 }
+
 
 function resetSystem() {
   callQueue = [];
@@ -319,5 +349,35 @@ function resetSystem() {
   initializeSystem();
 }
 
+function simulationMatrix(){
+  console.log("matrix simulation....")
+//  setInterval(()=>{
+//   simulateRandomCalls(5)
+//   // const floor = Math.floor(Math.random() * totalFloors);
+//   // setTimeout(() => {
+//   //   // Find button for this floor
+//   //   const button = document.querySelector(`.call-btn[data-floor="${floor}"]`);
+//   //   if (button && !button.classList.contains('waiting')) {
+//   //     handleCall(button, floor);
+//   //   } else {
+//   //     // Create a virtual button if the real one is busy
+//   //     const virtualButton = { 
+//   //       textContent: '', 
+//   //       nodeName: 'VIRTUAL',
+//   //       classList: {
+//   //         add: () => {},
+//   //         remove: () => {},
+//   //         contains: () => false
+//   //       }
+//   //     };
+//   //     handleCall(virtualButton, floor);
+//   //   }
+//   // }, 3000);
+
+//  }, 3000);
+      
+}
+
 // Initialize the system when the page loads
 window.addEventListener('DOMContentLoaded', initializeSystem);
+// window.addEventListener('DOMContentLoaded', simulationMatrix);
