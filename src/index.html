@@ -54,7 +54,7 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-1">
+            <div class="elevator idle" data-elevator="1" id="elevator-1">
               <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
               <span>
                 1
@@ -76,7 +76,7 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-2">
+            <div class="elevator idle" data-elevator="2" id="elevator-2">
               <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
               <span>
                 2
@@ -98,7 +98,7 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-3">
+            <div class="elevator idle" data-elevator="3" id="elevator-3">
               <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
               <span>
                 3
@@ -120,7 +120,7 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-4">
+            <div class="elevator idle" data-elevator="4" id="elevator-4">
               <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
               <span>
                 4
@@ -142,7 +142,7 @@
               <div class="shaft-floor-marker" data-floor="1"></div>
               <div class="shaft-floor-marker" data-floor="0"></div>
             </div>
-            <div class="elevator idle" id="elevator-5">
+            <div class="elevator idle" data-elevator="5" id="elevator-5">
               <img src="elevator.svg" alt="Elevator Icon" width="24" height="24">
               <span>
                 5
@@ -204,6 +204,12 @@
           </div>
         </div>
       </div>
+      <!-- Control panel -->
+      <div class="panel" id="simulate-panel">
+        <button onclick="simulateRandomCalls(5)">Simulate 5 Calls</button>
+        <button onclick="simulateRandomCalls(10)">Simulate 10 Calls</button>
+        <button onclick="resetSystem()">Reset System</button>
+      </div>
 
       <!-- System statistics -->
       <div class="system-stats">
@@ -217,12 +223,6 @@
       <!-- Log container -->
       <div id="log"></div>
 
-      <!-- Control panel -->
-      <div class="panel" id="simulate-panel">
-        <button onclick="simulateRandomCalls(5)">Simulate 5 Calls</button>
-        <button onclick="simulateRandomCalls(10)">Simulate 10 Calls</button>
-        <button onclick="resetSystem()">Reset System</button>
-      </div>
     </div>
   </div>
 
